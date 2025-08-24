@@ -1,0 +1,151 @@
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header .logo {
+  margin: 20px;
+  font-size: 2rem;
+  text-align: center;
+  color: #ff0080;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Cards */
+.card-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.plan-card {
+  background: #1a1a1a;
+  padding: 30px;
+  width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.plan-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.8);
+}
+
+.plan-card h2 {
+  font-size: 1.5rem;
+  color: #ff0080;
+}
+
+.plan-card .price {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #00ffe7;
+}
+
+.plan-card ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.plan-card ul li {
+  margin: 5px 0;
+  color: #ccc;
+}
+
+/* Premium & VIP styling */
+.premium {
+  border: 2px solid #00ffe7;
+}
+
+.vip {
+  border: 2px solid gold;
+}
+
+/* Buttons */
+.btn {
+  background: #ff0080;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ff4da6;
+}
+
+/* Form */
+.form-container {
+  margin-top: 50px;
+  background: #1c1c1c;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255, 0, 128, 0.5);
+}
+
+.form-container input {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* Benefits Page */
+.benefits-container {
+  text-align: center;
+  margin-top: 50px;
+}
+.payment-method-container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.method {
+  width: 180px;
+  padding: 20px;
+  background: #1c1c1c;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.method i {
+  font-size: 2rem;
+  color: #ff0080;
+  margin-bottom: 10px;
+}
+
+.method:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 0, 128, 0.8);
+}

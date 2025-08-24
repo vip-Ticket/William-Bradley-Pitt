@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Payment Method</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="payment-method-container">
+    <h1>Select Your Payment Method</h1>
+    <div class="methods">
+      <div class="method" onclick="selectPaymentMethod('E-Transfer')">
+        <i class="fa-solid fa-building-columns"></i>
+        <span>E-Transfer</span>
+      </div>
+
+      <div class="method" onclick="selectPaymentMethod('Apple Pay')">
+        <i class="fa-brands fa-apple"></i>
+        <span>Apple Pay</span>
+      </div>
+
+      <div class="method" onclick="selectPaymentMethod('Bank Wire')">
+        <i class="fa-solid fa-university"></i>
+        <span>Bank Wire</span>
+      </div>
+
+      <div class="method" onclick="selectPaymentMethod('Cash App')">
+        <i class="fa-brands fa-cc-apple-pay"></i>
+        <span>Cash App</span>
+      </div>
+
+      <div class="method" onclick="selectPaymentMethod('PayPal')">
+        <i class="fa-brands fa-paypal"></i>
+        <span>PayPal</span>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
